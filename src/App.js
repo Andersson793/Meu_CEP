@@ -1,6 +1,6 @@
 import './App.css';
 // importando componetes do React Materialize
-import { Row, Col, Button, TextInput, Table, Icon} from 'react-materialize';
+import {Row} from 'react-materialize';
 // importando componete Header
 import Header from './Componetes/Header'
 
