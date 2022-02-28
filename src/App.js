@@ -8,7 +8,7 @@ import Header from './Componetes/Header'
 function App() {
   return (
     <Row className="App">
-
+        <Header/>
     </Row>
   );
 }
