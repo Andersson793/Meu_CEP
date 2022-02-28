@@ -1,10 +1,15 @@
 import './App.css';
+// importando componetes do React Materialize
+import { Row, Col, Button, TextInput, Table, Icon} from 'react-materialize';
+// importando componete Header
+import Header from './Componetes/Header'
 
+// componete principal
 function App() {
   return (
-    <div className="App">
+    <Row className="App">
 
-    </div>
+    </Row>
   );
 }
 
