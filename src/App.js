@@ -9,6 +9,7 @@ import Tabela from './Componetes/Tabela';
 // importando useState do React
 import { useState } from 'react';
 
+console.clear()
 // componete principal
 function App() {
 
