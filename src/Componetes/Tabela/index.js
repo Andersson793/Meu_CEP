@@ -11,7 +11,7 @@ export default function Tabela({response}){
             <Row>
                <Col s={12} m={12}>
                   <Table className='highlight responsive-table'>
-                     {/* cabeça */}
+                     {/* verifica se houve alguma requisição */}
                      {response? <LocalTabela response={response}/> : <Esperando/>}
                   </Table>
                </Col>

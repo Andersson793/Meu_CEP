@@ -16,12 +16,13 @@ function App() {
 
   // resposta da requisição
   const [response, setResponse] = useState()
+  // observa se houve erro na requisição 
   const [responseErro, setResponseErro] = useState(false)
 
   return (
     <Row className="App">
         <Header setResponse={setResponse} setResponseErro={setResponseErro}/>
-        {/* verifica se hove sucesso na requisição */}
+        {/* verifica se houve sucesso na requisição */}
         {responseErro?  <TabelaErro/> : <Tabela response={response}/>}
         
     </Row>

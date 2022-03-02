@@ -12,6 +12,7 @@ export default function TabelaErro(){
                <Col s={12} m={12}>
                   <Icon large>sentiment_very_dissatisfied</Icon>
                   <p>Ops, algo deu errado</p>
+                  <strong>Verifique se os campos estão preenchidos corretamente</strong>
                </Col>
             </Row>
          </Col>
