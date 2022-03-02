@@ -8,7 +8,7 @@ import { request } from '../../request';
 import { useState } from 'react';
 
 // componete Header
-export default function Header({setResponse}){
+export default function Header({setResponse, setResponseErro}){
 
    // useStates
    const [UF, setUF] = useState('MA')
@@ -43,7 +43,7 @@ export default function Header({setResponse}){
                      onChange={(e) => setRua(e.target.value)}
                   />
                   <Button
-                     onClick={() => request(UF,cidade,rua,setResponse)} 
+                     onClick={() => request(UF,cidade,rua,setResponse,setResponseErro)} 
                      waves='light'>
                      Pesquisar
                      <Icon right>search</Icon>
