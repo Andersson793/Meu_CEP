@@ -4,7 +4,7 @@ import './index.css'
 import {Row, Col, Table} from 'react-materialize'
 
 // componete Tabela
-export default function Tabela(){
+export default function Tabela({response}){
    return(
       <Row>
          <Col offset='m2' s={12} m={8} className='Tabela grey lighten-5 z-depth-2 center-align'>
@@ -14,32 +14,24 @@ export default function Tabela(){
                      {/* cabeça */}
                      <thead>
                         <tr>
-                           <th>UF</th>
                            <th>Cidade</th>
+                           <th>Bairro</th>
                            <th>Rua</th>
                            <th>CEP</th>
                         </tr>
                      </thead>
                      {/* corpo */}
                      <tbody>
-                        <tr>
-                           <td>MA</td>
-                           <td>Rua Emiliano Marcieira</td>
-                           <td>São Luís</td>
-                           <td>65090-8112</td>
-                        </tr>
-                        <tr>
-                           <td>BA</td>
-                           <td>São josé</td>
-                           <td>São Luís</td>
-                           <td>65090-8112</td>
-                        </tr>
-                        <tr>
-                           <td>PI</td>
-                           <td>São josé</td>
-                           <td>São Luís</td>
-                           <td>65090-8112</td>
-                        </tr>
+                        {response.map((item) => {
+                           return(
+                              <tr>
+                                 <td>{item.localidade}</td>
+                                 <td>{item.bairro+' '+item.complemento}</td>
+                                 <td>{item.logradouro}</td>
+                                 <td>{item.cep}</td>
+                              </tr>
+                           )
+                        })}
                      </tbody>
                   </Table>
                </Col>
