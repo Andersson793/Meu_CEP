@@ -4,11 +4,11 @@
 
 <h2>Bibliotecas utilizadas :</h2>
 
-<a>React</a>
+<a href='https://pt-br.reactjs.org/'>React</a>
 
-<a>React Materialize</a>
+<a href='http://react-materialize.github.io/react-materialize/?path=/story/react-materialize--welcome'>React Materialize</a>
 
-<a href='www.axios.com'>Axios</a>
+<a href='https://axios-http.com/'>Axios</a>
 
 <h2>Deploy com Netlify :</h2>
 
