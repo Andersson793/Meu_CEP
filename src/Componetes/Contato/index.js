@@ -5,6 +5,7 @@ import Rede from './Icones/rede.png';
 // importando componetes do React Materialize
 import {Row, Col} from 'react-materialize'
 
+// componete Contato
 export function Contato() {
    return(
       <Row className='Footer'>
