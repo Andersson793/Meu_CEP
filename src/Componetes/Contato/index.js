@@ -11,13 +11,13 @@ export function Contato() {
          <Col offset='m2' s={12} m={8} className='center-align'>
             <br/>
             <a href='https://github.com/Andersson793'>
-               <img title='GitHub' src={GitHub}/>
+               <img alt='GitHub' title='GitHub' src={GitHub}/>
             </a>
             <a href='https://www.linkedin.com/in/andersson-silva-gonçalves-2a6839203'>
-               <img title='Linkedin' src={Linkedin}/>
+               <img alt='Linkedin' title='Linkedin' src={Linkedin}/>
             </a>
-            <a href='#'>
-               <img title='Site pessoal' src={Rede}/>
+            <a href='https://github.com/Andersson793'>
+               <img alt='Site pessoal' title='Site pessoal' src={Rede}/>
             </a>
          </Col>
       </Row>
