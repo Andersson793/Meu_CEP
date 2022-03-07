@@ -9,3 +9,19 @@ body {
   margin: 0;
   background-color: #f5f5f5;
 }
+
+.Header{
+  margin-top: 3%;
+}
+
+.Header input[name='uf']{
+  text-transform: uppercase;
+}
+
+.TabelaErro p, .Tabela p{
+  font-size: x-large;
+}
+
+.Footer a{
+  margin: 0 10px;
+}

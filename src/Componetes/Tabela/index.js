@@ -1,12 +1,10 @@
-// importando estilização
-import './index.css'
 // importando componentes de React Materialize
 import {Row, Col, Table, Icon} from 'react-materialize'
 
 // componete Tabela
 export default function Tabela({response}){
    return(
-      <Row>
+      <Row className='Tabela'>
          <Col offset='m2' s={12} m={8} className='Tabela grey lighten-5 z-depth-2 center-align'>
             <Row>
                <Col s={12} m={12}>
@@ -35,7 +33,7 @@ function LocalTabela({response}) {
          <tbody>
             {response.map((item) => {
                return(
-                  <tr>
+                  <tr key={item.cep}>
                      <td>{item.localidade}</td>
                      <td>{item.bairro+' '+item.complemento}</td>
                      <td>{item.logradouro}</td>

@@ -1,5 +1,3 @@
-// importando estilização
-import './index.css';
 // importando componentes de React Materialize
 import {Row, Col, TextInput, Button, Icon} from 'react-materialize';
 // importando request
@@ -11,33 +9,44 @@ import { useState } from 'react';
 export default function Header({setResponse, setResponseErro}){
 
    // useStates
-   const [UF, setUF] = useState('MA')
-   const [cidade, setCidade] = useState('São Luís')
-   const [rua, setRua] = useState('São joão')
+   const [UF, setUF] = useState('')
+   const [cidade, setCidade] = useState()
+   const [rua, setRua] = useState()
    
    return(
-      <Row>
+      <Row className='Header'>
          <Col offset='m2' s={12} m={8} className='Header grey lighten-5 z-depth-2 center-align'>
             <Row>
                <Col offset='m2' s={12} m={8}>
                   <header>
                      <h1 className='teal-text'>Pesquisa de CEP</h1>
-                     <p>Coloque aqui um endereço para pesquisa.</p>
+                     <p>Coloque aqui um endereço para pesquisar.</p>
                   </header>
                   <br/>
                   {/* inputs */}
                   <TextInput
+                     name='uf'
                      label='UF'
-                     placeholder='ex. SP'
+                     placeholder='ex: SP'
                      s={12} m={2}
-                     onChange={(e) => setUF(e.target.value)}
+                     value={UF}
+                     // limita a quantidade de caracteres para o input UF
+                     onChange={(e) => {
+                        if (e.target.value.length <= 2) {
+                           setUF(e.target.value)
+                        } else {
+                           alert('Utilize apenas a  sigla do seu estado ex: SP')
+                        }
+                     }}
                   />
                   <TextInput
+                     name='cidade'
                      label='Cidade'
                      s={12} m={5}
                      onChange={(e) => setCidade(e.target.value)}
                   />
-                  <TextInput 
+                  <TextInput
+                     name='rua'
                      label='Rua'
                      s={12} m={5}
                      onChange={(e) => setRua(e.target.value)}

@@ -1,5 +1,3 @@
-// importando folha de estilo
-import './App.css';
 // importando componetes do React Materialize
 import { Row } from 'react-materialize';
 // importando componete Header
@@ -10,6 +8,8 @@ import Tabela from './Componetes/Tabela';
 import { useState } from 'react';
 // importando componente TabelaErro
 import TabelaErro from './Componetes/Tabela/tabelaErro';
+// importando componete Contato
+import {Contato} from './Componetes/Contato';
 
 // componete principal
 function App() {
@@ -20,11 +20,12 @@ function App() {
   const [responseErro, setResponseErro] = useState(false)
 
   return (
-    <Row className="App">
+    <Row className="App center-align">
         <Header setResponse={setResponse} setResponseErro={setResponseErro}/>
         {/* verifica se houve sucesso na requisição */}
         {responseErro?  <TabelaErro/> : <Tabela response={response}/>}
-        
+        <i>Resutados gerados por ViaCep API</i>
+        <Contato/>      
     </Row>
   );
 }
