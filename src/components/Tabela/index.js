@@ -1,21 +1,9 @@
-// importando componentes de React Materialize
-import {Row, Col, Table, Icon} from 'react-materialize'
-
 // componete Tabela
 export default function Tabela({response}){
    return(
-      <Row className='Tabela'>
-         <Col offset='m2' s={12} m={8} className='Tabela grey lighten-5 z-depth-2 center-align'>
-            <Row>
-               <Col s={12} m={12}>
-                  <Table className='highlight responsive-table'>
-                     {/* verifica se houve alguma requisição */}
-                     {response? <LocalTabela response={response}/> : <Esperando/>}
-                  </Table>
-               </Col>
-            </Row>
-         </Col>
-      </Row>
+      <>
+         {response? <div response={response}></div> : <Esperando/>}
+      </>
    )
 }
 // componete principal da tabela
@@ -50,7 +38,6 @@ function LocalTabela({response}) {
 function Esperando(){
    return(
       <div>
-         <Icon large>search</Icon>
          <p>Faça uma pesquisa</p>
       </div>
    )
