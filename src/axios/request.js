@@ -1,4 +1,3 @@
-// importando instance de configAxios
 import instance from './configAxios';
 
 // função para fazer a requisição para a API
