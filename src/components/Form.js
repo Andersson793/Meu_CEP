@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export default function Form() {
     return(
         <form className="mb-12">
@@ -20,9 +22,9 @@ export default function Form() {
 
 function Button({value}) {
     return(
-        <button className="border-2 border-slate-600 px-2 py-1 mx-4 rounded-md hover:bg-slate-600 hover:text-white mb-5">
+        <Link to={`/por_CEP`} className="border-2 border-slate-600 px-2 py-1 mx-4 rounded-md hover:bg-slate-600 hover:text-white mb-5">
             {value}
-        </button>
+        </Link>
     )
 }
 
