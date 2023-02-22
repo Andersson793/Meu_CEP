@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function Form() {
     return(
-        <form className="mb-12">
+        <form className="mb-12 text-center mt-36">
             <label>Coloque aqui um endereço para pesquisar</label>
-            <div className="flex justify-center items-center rounded-md px-3 mb-8"> 
+            <div className="flex justify-center items-center px-3 mb-8"> 
                 <select className="p-2 rounded-md">
                     <option>MA</option>
                     <option>PA</option>
@@ -14,15 +14,17 @@ export default function Form() {
                 <Input placeholder='Cidade'/>
                 <Input placeholder='Rua'/>
             </div>
-            <Button value="Pesquisar"/>
-            <Button value="Pesquisar por CEP"/>
+            <div className="flex justify-center items-center">
+                <Button value="Pesquisar"/>
+                <Button value="Pesquisar por CEP"/>
+            </div>
         </form>
     )
 }
 
 function Button({value}) {
     return(
-        <Link to={`/por_CEP`} className="border-2 border-slate-600 px-2 py-1 mx-4 rounded-md hover:bg-slate-600 hover:text-white mb-5">
+        <Link to={`/por_CEP`} className="border-2 border-slate-600 px-2 py-1 mx-4 rounded-sm hover:bg-slate-600 hover:text-white mb-5">
             {value}
         </Link>
     )

@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import Body from './components/Body';
 import Footer from './components/Footer';
 import Header from './components/Header';
+import Form from './components/Form';
+import Table from './components/Table';
 
 function App() {
 
@@ -9,10 +10,14 @@ function App() {
   const [responseErro, setResponseErro] = useState(false)
 
   return (
-    <>
-      <Body/>
-      <Footer/>
-    </>
+    <div className="grid grid-cols-9 mt-32 py-6">
+      <div className="col-start-3 col-span-5 text-center">
+          <h1 className="mb-24 text-3xl text-slate-600">Encontre o seu CEP.</h1>
+          <Form/>
+          <Table/>
+          <Footer/>
+      </div>
+    </div>
   );
 }
 
