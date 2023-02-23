@@ -1,4 +1,4 @@
-import instance from './configAxios';
+import instance from './axios.config';
 
 // função para fazer a requisição para a API
 export async function request(UF,Cidade,Rua,setResponse,setResponseErro) {
