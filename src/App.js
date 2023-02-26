@@ -8,8 +8,6 @@ function App() {
 
   const [response, setResponse] = useState()
 
-  console.log(response)
-
   return (
     <div className="grid grid-cols-9 mt-32 py-6">
       <div className="col-start-3 col-span-5 text-center">

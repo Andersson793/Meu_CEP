@@ -8,10 +8,6 @@ export default function Form({setResponse}) {
     const [cidade, setCidade] = useState('Salvador')
     const [rua, setRua] = useState('rei')
 
-    function getAPI(uf,cidade,rua) {
-        setResponse(request(uf,cidade,rua))
-    }
-
     return(
         <form className="mb-12 text-center mt-36">
             <label>Coloque aqui um endereço para pesquisar</label>
@@ -26,7 +22,7 @@ export default function Form({setResponse}) {
                 <Input placeholder='Rua'/>
             </div>
             <div className="flex justify-center items-center">
-                <a onClick={() => getAPI(uf,cidade,rua)}>Pesquisar</a>
+                <a onClick={() => request(uf,cidade,rua,setResponse)}>Pesquisar</a>
                 <Link_button value="Pesquisar por CEP"/>
             </div>
         </form>

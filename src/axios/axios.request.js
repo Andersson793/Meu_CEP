@@ -1,7 +1,7 @@
 import instance from './axios.config';
 
 // função para fazer a requisição para a API
-export async function request(UF,Cidade,Rua) {
+export async function request(UF,Cidade,Rua,setResponse) {
 
   const response = await instance.get(`${UF}/${Cidade}/${Rua}/json/`).then(
     console.warn('requisição feita com sucesso')
@@ -9,6 +9,6 @@ export async function request(UF,Cidade,Rua) {
     console.warn('houver um erro na requisição')
   })
 
-  return response.data
+  setResponse(response.data)
 
 }
