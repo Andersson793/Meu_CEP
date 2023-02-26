@@ -1,6 +1,21 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
+import {request} from '../axios/axios.request';
+
+console.clear()
+
+function getAPI(uf,cidade,rua) {
+    const response = request(uf,cidade,rua)
+    
+    console.log(response)
+}
 
 export default function Form() {
+
+    const [uf, setUf] = useState('ba')
+    const [cidade, setCidade] = useState('Salvador')
+    const [rua, setRua] = useState('rei')
+
     return(
         <form className="mb-12 text-center mt-36">
             <label>Coloque aqui um endereço para pesquisar</label>
@@ -15,14 +30,14 @@ export default function Form() {
                 <Input placeholder='Rua'/>
             </div>
             <div className="flex justify-center items-center">
-                <Button value="Pesquisar"/>
-                <Button value="Pesquisar por CEP"/>
+                <a onClick={() => getAPI(uf,cidade,rua)}>Pesquisar</a>
+                <Link_button value="Pesquisar por CEP"/>
             </div>
         </form>
     )
 }
 
-function Button({value}) {
+function Link_button({value}) {
     return(
         <Link to={`/por_CEP`} className="border-2 border-slate-600 px-2 py-1 mx-4 rounded-sm hover:bg-slate-600 hover:text-white mb-5">
             {value}
