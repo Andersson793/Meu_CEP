@@ -2,19 +2,15 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import {request} from '../axios/axios.request';
 
-console.clear()
-
-function getAPI(uf,cidade,rua) {
-    const response = request(uf,cidade,rua)
-    
-    console.log(response)
-}
-
-export default function Form() {
+export default function Form({setResponse}) {
 
     const [uf, setUf] = useState('ba')
     const [cidade, setCidade] = useState('Salvador')
     const [rua, setRua] = useState('rei')
+
+    function getAPI(uf,cidade,rua) {
+        setResponse(request(uf,cidade,rua))
+    }
 
     return(
         <form className="mb-12 text-center mt-36">
