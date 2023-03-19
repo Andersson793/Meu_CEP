@@ -1,6 +1,24 @@
 import { useState } from "react";
 import {request} from '../axios/axios.request';
 import FormAdress from "./forms/FormAdress";
+import FormCEP from "./forms/FormCEP";
+
+import {
+    createBrowserRouter,
+    RouterProvider,
+} from "react-router-dom";
+  
+//rotas
+const router = createBrowserRouter([
+{
+    path: "/",
+    element: <FormAdress/>,
+},
+{
+    path: "/por_CEP",
+    element: <FormCEP/>
+}
+]);
 
 export default function Form({setResponse}) {
 
@@ -10,20 +28,7 @@ export default function Form({setResponse}) {
 
     return(
         <form className="mb-12 text-center mt-36">
-            <FormAdress/>
+            <RouterProvider router={router} />
         </form>
-    )
-}
-
-
-function Input({placeholder,change}) {
-    return(
-        <div className="relative my-8 mx-4 w-30">
-            <input
-                placeholder={placeholder}
-                onChange={(e) => change(e.target.value)}
-                className="p-2 outline-none w-full focus:border-b-slate-600 bg-slate-600/5 rounded-md peer"
-            />
-        </div>
     )
 }
