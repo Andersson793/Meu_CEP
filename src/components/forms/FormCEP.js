@@ -1,3 +1,6 @@
+import Link_button from "./form_buttons/LinkButton"
+import Search from "./form_buttons/search"
+
 export default function PorCEP() {
     return(
         <>
@@ -6,7 +9,8 @@ export default function PorCEP() {
                 <div className="flex justify-center items-center px-3 mb-8"> 
                     <Input placeholder='CEP'/>
                 </div>
-               <a>Pesquisar</a>
+               <Search value="Pesquisar"/>
+               <Link_button value="Pesquisar por endereço" route="/"/>
             </form>
         </>
     )

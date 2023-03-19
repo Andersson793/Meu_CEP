@@ -1,5 +1,6 @@
 import Input from "./form_buttons/Input";
 import Link_button from "./form_buttons/LinkButton";
+import Search from "./form_buttons/search";
 
 export default function FormAdress() {
     return(
@@ -16,8 +17,8 @@ export default function FormAdress() {
                 <Input placeholder='Rua'/>
             </div>
             <div className="flex justify-center items-center">
-                <a>Pesquisar</a>
-                <Link_button value="Pesquisar por CEP"/>
+                <Search value="Pesquisar"/>
+                <Link_button value="Pesquisar por CEP" route="/por_CEP"/>
             </div>
         </>
     )
