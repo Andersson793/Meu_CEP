@@ -2,15 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import PorCEP from './components/PorCEP.js'
+import PorCEP from './components/forms/FormCEP.js'
 
 //react router
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import Footer from './components/Footer';
-import Header from './components/Header';
 
 const router = createBrowserRouter([
   {
