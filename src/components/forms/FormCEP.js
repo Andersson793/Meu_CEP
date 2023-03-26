@@ -1,29 +1,38 @@
 import Link_button from "./form_buttons/LinkButton"
 import Search from "./form_buttons/search"
+import Input from "./form_buttons/Input"
+import { IMaskInput } from 'react-imask';
+import { useRef } from "react";
+
+//Formulario de pesquisa por por CEP
 
 export default function PorCEP() {
+
+    const ref = useRef(null);
+    const inputRef = useRef(null);
+
     return(
         <>
             <form className="mb-12 text-center mt-36">
                <label>Coloque aqui um CEP para pesquisar</label>
-                <div className="flex justify-center items-center px-3 mb-8"> 
-                    <Input placeholder='CEP'/>
+                <div className="flex justify-center items-center px-3 mb-8">
+
+                    <IMaskInput
+                        className="p-2 outline-none w-full invalid:bg-red-300 focus:border-b-slate-600 bg-slate-600/5 rounded-md"
+                        mask={"00000-000"}
+                        ref={ref}
+                        inputRef={inputRef}
+                        onAccept={
+                            (value, mask) => console.log(value, mask.masked.mask)
+                        }
+
+                        placeholder='00000-000'
+                    />
+
                 </div>
                <Search value="Pesquisar"/>
                <Link_button value="Pesquisar por endereço" route="/"/>
             </form>
         </>
-    )
-}
-
-
-function Input({placeholder}) {
-    return(
-        <div className="relative my-8 mx-4 w-34">
-            <input
-                placeholder={placeholder}
-                className="p-2 outline-none w-full focus:border-b-slate-600 bg-slate-600/5 rounded-md peer"
-            />
-        </div>
     )
 }

@@ -2,6 +2,8 @@ import Input from "./form_buttons/Input";
 import Link_button from "./form_buttons/LinkButton";
 import Search from "./form_buttons/search";
 
+//Formulario de pesquisa por endereço
+
 export default function FormAdress() {
     return(
         <>
@@ -13,8 +15,8 @@ export default function FormAdress() {
                     <option>BA</option>
                     <option>US</option>
                 </select>
-                <Input placeholder='Cidade'/>
-                <Input placeholder='Rua'/>
+                <Input placeholder='Cidade' type="text"/>
+                <Input placeholder='Rua' type="text"/>
             </div>
             <div className="flex justify-center items-center">
                 <Search value="Pesquisar"/>
