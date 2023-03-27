@@ -8,17 +8,17 @@ export default function FormAdress() {
     return(
         <>
             <label>Coloque aqui um endereço para pesquisar</label>
-            <div className="flex justify-center items-center px-3 mb-8"> 
-                <select className="p-2 rounded-md">
+            <div className="grid grid-cols-12 mb-20 mt-8"> 
+                <select className="col-span-2 text-center rounded-md">
                     <option>MA</option>
                     <option>PA</option>
                     <option>BA</option>
                     <option>US</option>
                 </select>
-                <Input placeholder='Cidade' type="text"/>
-                <Input placeholder='Rua' type="text"/>
+                <Input style="col-start-4 col-span-4" placeholder='Cidade' type="text"/>
+                <Input style="col-start-9 col-span-4" placeholder='Rua' type="text"/>
             </div>
-            <div className="flex justify-center items-center">
+            <div className="grid grid-cols-6">
                 <Search value="Pesquisar"/>
                 <Link_button value="Pesquisar por CEP" route="/por_CEP"/>
             </div>
