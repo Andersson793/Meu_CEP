@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import Footer from './components/Footer';
-import Header from './components/Header';
-import Form from './components/Form';
+import Form from './components/form/Form'
 import Table from './components/Table';
 
 function App() {

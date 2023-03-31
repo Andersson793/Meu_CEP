@@ -1,6 +1,5 @@
 import Input from "./form_buttons/Input";
-import Link_button from "./form_buttons/LinkButton";
-import Search from "./form_buttons/search";
+import FormButtons from "./FormButtons";
 
 //Formulario de pesquisa por endereço
 
@@ -18,10 +17,7 @@ export default function FormAdress() {
                 <Input style="col-start-4 col-span-4" placeholder='Cidade' type="text"/>
                 <Input style="col-start-9 col-span-4" placeholder='Rua' type="text"/>
             </div>
-            <div className="grid grid-cols-6">
-                <Search value="Pesquisar"/>
-                <Link_button value="Pesquisar por CEP" route="/por_CEP"/>
-            </div>
+            <FormButtons value="Perquisar por CEP" route="/por_CEP" />
         </>
     )
 }

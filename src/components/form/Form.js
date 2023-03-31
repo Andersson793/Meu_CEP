@@ -1,7 +1,7 @@
 import { useState } from "react";
-import {request} from '../axios/axios.request';
-import FormAdress from "./forms/FormAdress";
-import FormCEP from "./forms/FormCEP";
+import {request} from '../../axios/axios.request';
+import FormAdress from './FormAdress';
+import FormCep from './FormCep'
 
 import {
     createBrowserRouter,
@@ -16,7 +16,7 @@ const router = createBrowserRouter([
 },
 {
     path: "/por_CEP",
-    element: <FormCEP/>
+    element: <FormCep/>
 }
 ]);
 
