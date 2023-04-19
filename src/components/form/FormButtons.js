@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 export default function FormButtons({value,route}) {
     return(
         <>
-            <div className="grid grid-cols-6">
+            <div className="flex justify-center">
                 <Search/>
                 <Link_button value={value} route={route}/>
             </div>
@@ -11,16 +11,25 @@ export default function FormButtons({value,route}) {
     )
 }
 
-function Link_button({value,route}) {
+function Search() {
     return(
-        <Link to={route} className="border-2 py-1 border-slate-600 rounded-lg hover:bg-slate-600 hover:text-white col-start-4 col-span-2">
-            {value}
-        </Link>
+        <input 
+            type={"button"}
+            value="Pesquisar" className="border-2  h-9 px-3 mr-11 border-slate-600 rounded-lg hover:bg-slate-600 hover:text-white cursor-pointer"
+        />
     )
 }
 
-function Search() {
+function Link_button({value,route}) {
     return(
-        <input type={"button"} value="Pesquisar" className="border-2 py-1 border-slate-600 rounded-lg hover:bg-slate-600 hover:text-white col-start-2 col-span-1"/>
+        <Link 
+            to={route}
+        >
+            <input 
+                type={"button"}
+                className="border-2 px-3 h-9 border-slate-600 rounded-lg hover:bg-slate-600 hover:text-white cursor-pointer"
+                value={value}
+            />
+        </Link>
     )
 }
