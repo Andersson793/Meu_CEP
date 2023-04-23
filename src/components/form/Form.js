@@ -1,5 +1,3 @@
-import { useState } from "react";
-import {request} from '../../axios/axios.request';
 import FormAdress from './FormAdress';
 import FormCep from './FormCep'
 
@@ -20,15 +18,12 @@ const router = createBrowserRouter([
 }
 ]);
 
-export default function Form({setResponse}) {
-
-    const [uf, setUf] = useState('ma')
-    const [cidade, setCidade] = useState('são luis')
-    const [rua, setRua] = useState('são josé')
+export default function Form({ola}) {
 
     return(
         <form className="mb-12 text-center mt-36">
             <RouterProvider router={router} />
         </form>
     )
+
 }
