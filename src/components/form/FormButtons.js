@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { request } from "../../axios/axios.request";
 
 export default function FormButtons({value,route,action}) {
     return(
@@ -16,7 +17,7 @@ function Search({action}) {
         <input 
             type={"button"}
             value="Pesquisar" className="border-2  h-9 px-3 mr-11 border-slate-600 rounded-lg hover:bg-slate-600 hover:text-white cursor-pointer"
-            onClick={() => action()}
+            onClick={() =>  action}
         />
     )
 }
