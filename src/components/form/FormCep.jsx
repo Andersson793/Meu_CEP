@@ -1,20 +1,17 @@
 import { IMaskInput } from 'react-imask';
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import FormButtons from './FormButtons';
+import { requestCEP } from "../../axios/axios.request";
 
 //Formulario de pesquisa por por CEP
-export default function FormCep() {
+export default function FormCep({}) {
+
+    const [response, setResponse] = useState()
 
     const ref = useRef(null);
     const inputRef = useRef(null);
 
-    /*
-
-        onAccept={
-            (value) => console.log(value)
-        }
-
-    */
+    const [CEP, setCEP] = useState();
 
     return(
         <>
@@ -27,10 +24,27 @@ export default function FormCep() {
                     ref={ref}
                     inputRef={inputRef}
                     placeholder='00000-000'
+
+                    onAccept={
+                        (value) => setCEP(value)
+                    }
                 />
 
             </div>
-            <FormButtons value="Pesquisar por endereço" route="/" />
+            <FormButtons value="Perquisar por endereço" route="/" action={() => requestCEP(CEP,setResponse)} />
+
+            {response? <Adresss response={response}/> : console.log('sem resposta')}
+        </>
+    )
+}
+
+function Adresss ({response}){
+    return(
+        <>
+            <p>{response.localidade}</p>
+            <p>{response.bairro}</p>
+            <p>{response.logradouro}</p>
+            <p>{response.cep}</p>
         </>
     )
 }
