@@ -33,31 +33,43 @@ export default function FormCep({}) {
             </div>
             <FormButtons value="Perquisar por endereço" route="/" action={() => requestCEP(CEP,setResponse)} />
 
-            {response? <Adresss response={response}/> : console.log('sem resposta')}
+            {response? <Adresss response={response}/> : console.log("sem resposta")}
         </>
     )
 }
 
 function Adresss ({response}){
-    return(
-        <div className='flex mt-20 justify-center'>
 
-            <div className="py-2 px-4  mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
-                <p>{response.localidade}</p>
+    if(response.erro)
+    {
+        return(
+            <div className='mt-20 py-3 outline-none bg-red-300 rounded-md text-center'>
+                <p>Ops, não foi possível encontrar um resultado.</p>
             </div>
-            
-            <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
-                <p>{response.bairro}</p>
+        )
+    }
+    else
+    {
+        return(
+            <div className='flex mt-20 justify-center'>
+    
+                <div className="py-2 px-4  mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                    <p>{response.localidade}</p>
+                </div>
+                
+                <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                    <p>{response.bairro}</p>
+                </div>
+    
+                <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                    <p>{response.logradouro}</p>
+                </div>
+    
+                <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                    <p>{response.cep}</p>
+                </div>
+                
             </div>
-
-            <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
-                <p>{response.logradouro}</p>
-            </div>
-
-            <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
-                <p>{response.cep}</p>
-            </div>
-            
-        </div>
-    )
+        )
+    }
 }

@@ -22,12 +22,13 @@ function Search({action}) {
 function Link_button({value,route}) {
     return(
         <div>
-            <Link 
+            <Link
+                className="text-slate-700"
                 to={route}
             >
-                <a className="text-cyan-950">
-                    {value}
-                </a>
+                
+                {value}
+
             
             </Link>
         </div>
