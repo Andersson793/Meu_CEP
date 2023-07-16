@@ -25,7 +25,10 @@ function Link_button({value,route}) {
             <Link 
                 to={route}
             >
-                <a className="text-cyan-950">{value}</a>
+                <a className="text-cyan-950">
+                    {value}
+                </a>
+            
             </Link>
         </div>
     )
