@@ -16,10 +16,10 @@ export default function FormCep({}) {
     return(
         <>
             <label>Coloque aqui um CEP para pesquisar</label>
-            <div className="flex justify-center items-center py-9 mb-8">
+            <div className="flex justify-center items-center mt-10 mb-20">
 
                 <IMaskInput
-                    className="p-2 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center"
+                    className="p-2 outline-none h-12 focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center my-2"
                     mask={"00000-000"}
                     ref={ref}
                     inputRef={inputRef}
@@ -40,11 +40,24 @@ export default function FormCep({}) {
 
 function Adresss ({response}){
     return(
-        <>
-            <p>{response.localidade}</p>
-            <p>{response.bairro}</p>
-            <p>{response.logradouro}</p>
-            <p>{response.cep}</p>
-        </>
+        <div className='flex mt-20 justify-center'>
+
+            <div className="py-2 px-4  mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                <p>{response.localidade}</p>
+            </div>
+            
+            <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                <p>{response.bairro}</p>
+            </div>
+
+            <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                <p>{response.logradouro}</p>
+            </div>
+
+            <div className="py-2 px-4 mr-5 outline-none focus:border-b-slate-600 bg-slate-600/5 rounded-md text-center">
+                <p>{response.cep}</p>
+            </div>
+            
+        </div>
     )
 }

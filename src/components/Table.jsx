@@ -4,7 +4,7 @@ export default function Table({response}) {
 
     return(
         <>
-            <table className="table-auto w-full text-left">
+            <table className="mt-20 table-auto w-full text-left">
                 <thead className="border-b-2 border-slate-300">
                     <tr>
                         <th className="px-5 py-2">Cidade</th>
